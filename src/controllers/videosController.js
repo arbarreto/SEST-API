@@ -4,7 +4,6 @@ const database = require('../../models')
 class VideosController {
 
     static async getVideos(req, res) {
-        console.log('funcionando');
         try {
             const fhui = await database.Videos.findAll()
             return res.status(200).json(fhui)
