@@ -45,6 +45,19 @@ class VideosController {
         }
     }
 
+    static async putVideoNumberView(req, res){
+        const {id} = req.params
+        const body = req.body
+
+        try {
+            await database.Videos.update(body, {where:{id:id}})
+            const getUpdate = await database.Videos.findAll({where:{id:id}})
+            return res.status(200).json(getUpdate)
+        } catch (error) {
+            return res.status(500).json(error.message)
+        }
+    }
+
 }
 
 module.exports = VideosController

@@ -1,23 +1,26 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Videos = sequelize.define('Videos', {
+  const Locale = sequelize.define('Locale', {
     id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER
       },
-      title: {
+      ip: {
         type: DataTypes.STRING,
       },
-      description: {
+      uf: {
         type: DataTypes.STRING
       },
-      link: {
+      city: {
         type: DataTypes.STRING,
       },
-      views: {
-        type: DataTypes.INTEGER,
+      lat: {
+        type: DataTypes.STRING,
+      },
+      long: {
+        type: DataTypes.STRING,
       },
       created_at: {
         type: DataTypes.DATE
@@ -29,5 +32,5 @@ module.exports = (sequelize, DataTypes) => {
     createdAt:false,
     updatedAt:false
   });
-  return Videos;
+  return Locale;
 };
